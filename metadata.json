@@ -1,0 +1,7 @@
+{
+  "name": "ResepMakananLengkap.com",
+  "description": "Platform resep masakan dunia terlengkap dengan bantuan AI, informasi nutrisi, dan desain modern responsif.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
