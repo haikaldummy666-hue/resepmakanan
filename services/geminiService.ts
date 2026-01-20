@@ -2,8 +2,8 @@
 import { GoogleGenAI } from "@google/genai";
 
 export async function getRecipeSuggestions(ingredients: string) {
-  // Always use direct initialization with process.env.API_KEY as per guidelines
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Always use direct initialization with process.env.GEMINI_API_KEY as per guidelines
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY });
   
   try {
     const response = await ai.models.generateContent({
