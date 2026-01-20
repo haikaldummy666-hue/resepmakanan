@@ -2,8 +2,15 @@
 import { GoogleGenAI } from "@google/genai";
 
 export async function getRecipeSuggestions(ingredients: string) {
-  // Always use direct initialization with process.env.GEMINI_API_KEY as per guidelines
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY });
+  // For Vite, use import.meta.env to access environment variables on client-side
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  
+  if (!apiKey) {
+    console.error("VITE_GEMINI_API_KEY is not set");
+    return "Maaf, API key belum dikonfigurasi. Silakan set VITE_GEMINI_API_KEY di environment.";
+  }
+  
+  const ai = new GoogleGenAI({ apiKey });
   
   try {
     const response = await ai.models.generateContent({
