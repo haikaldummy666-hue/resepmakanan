@@ -25,6 +25,20 @@ export default {
           900: '#134e4a',
           950: '#0d3432',
         }
+      },
+      keyframes: {
+        'fade-in': {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'skeleton-loading': {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        }
+      },
+      animation: {
+        'fade-in': 'fade-in 0.5s ease-out',
+        'skeleton-loading': 'skeleton-loading 1.5s infinite',
       }
     },
   },

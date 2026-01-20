@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode, language, t
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-effect shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
